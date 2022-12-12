@@ -5,26 +5,26 @@ on:
     branches:
       - main
 jobs:
-  job_1_name:
+  job_1_name_version:
     runs-on: ubuntu-20.04
     container:
       image: ghcr.io/chicagomg/bash:5
-      #image: public.ecr.aws/docker/library/bash:5
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
-      - uses: actions/checkout@main
-      - name: run ls
-        run: ls
       - name: name of this
         run: |
           sh ./files/entrypoint.sh
 
-  job_2_name:
+  job_2_name_tag:
     runs-on: ubuntu-20.04
+    container:
+      image: ghcr.io/chicagomg/busybox:1.35.0-glibc
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
     steps:
-    - name: name of this
-      run: |
-        echo $(pwd)
-        echo "hello world"
+      - name: look
+        run: |
+          sh ./files/entrypoint_tag.sh
