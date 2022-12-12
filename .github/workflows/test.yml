@@ -13,9 +13,12 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
+      - uses: actions/checkout@main
+      - name: run ls
+        run: ls
       - name: name of this
         run: |
-          ls
+          echo $(pwd)
   job_2_name_tag:
     runs-on: ubuntu-20.04
     container:
