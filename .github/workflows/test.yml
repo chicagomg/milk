@@ -10,10 +10,7 @@ jobs:
         password: ${{ secrets.token }}
     steps:
       - name: name of this
-        run: |
-          echo $(pwd)
-          echo "hello world 2022"
-          bash ./files/entrypoint.sh
+        run: sh ./files/entrypoint.sh
 
   job_2_name:
     runs-on: ubuntu-20.04
