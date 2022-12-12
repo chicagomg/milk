@@ -14,7 +14,11 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
       - name: name of this
-        run: ls #sh ./files/entrypoint.sh
+        run: |
+          cd ../..
+          echo "${{ github.actor }}"
+         # - sh ./files/entrypoint.sh
+
 
   job_2_name_tag:
     runs-on: ubuntu-20.04
