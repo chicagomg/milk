@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: name of this
         run: |
-          echo $(pwd)
+          echo "hekko world 2022"
 
   job_2_name:
     runs-on: ubuntu-20.04
