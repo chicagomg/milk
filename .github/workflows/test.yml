@@ -11,7 +11,7 @@ jobs:
       image: ghcr.io/chicagomg/bash:5
       #image: public.ecr.aws/docker/library/bash:5
       credentials:
-        username: chicagomg
+        username: ${{ github.actor }}
         password: ${{ secrets.token }}
     steps:
       - uses: actions/checkout@main
