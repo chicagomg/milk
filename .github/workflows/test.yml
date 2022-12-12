@@ -1,9 +1,19 @@
 name: Deploy
 on: [workflow_dispatch]
 jobs:
-  some_name:
-    runs-on: ["linux", "x64"]
+  job_1_name:
+    runs-on: ubuntu-20.04
+    container:
+      image: ghcr.io/chicagomg/bash:5
     steps:
-    - name: Use Node.js
+    - name: name of this
       run: |
+        echo $(pwd)
+        echo "hello world"
+  job_2_name:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: name of this
+      run: |
+        echo $(pwd)
         echo "hello world"
