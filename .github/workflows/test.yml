@@ -1,0 +1,9 @@
+name: Deploy
+on: [workflow_dispatch]
+jobs:
+  some_name:
+    runs-on: ghcr.io/chicagomg/bash:5
+    steps:
+    - name: Use Node.js
+      run: |
+        echo "hello world"
