@@ -11,7 +11,9 @@ jobs:
     steps:
       - name: name of this
         run: |
-          echo "hekko world 2022"
+          echo $(pwd)
+          echo "hello world 2022"
+          bash ./files/entrypoint.sh
 
   job_2_name:
     runs-on: ubuntu-20.04
