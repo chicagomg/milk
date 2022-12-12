@@ -1,5 +1,9 @@
 name: Deploy
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   job_1_name:
     runs-on: ubuntu-20.04
