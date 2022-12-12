@@ -5,11 +5,8 @@ jobs:
     runs-on: ubuntu-20.04
     container:
       image: ghcr.io/chicagomg/bash:5
-    steps:
-    - name: name of this
-      run: |
-        echo $(pwd)
-        echo "hello world"
+      options: echo "hello world"
+      
   job_2_name:
     runs-on: ubuntu-20.04
     steps:
