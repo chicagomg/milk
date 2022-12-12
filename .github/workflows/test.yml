@@ -14,7 +14,8 @@ jobs:
         password: ${{ secrets.token }}
     steps:
       - name: name of this
-        run: sh ./files/entrypoint.sh
+        run: |
+          sh ./files/entrypoint.sh
 
   job_2_name:
     runs-on: ubuntu-20.04
