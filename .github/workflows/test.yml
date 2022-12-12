@@ -12,7 +12,7 @@ jobs:
       #image: public.ecr.aws/docker/library/bash:5
       credentials:
         username: ${{ github.actor }}
-        password: ${{ secrets.token }}
+        password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@main
       - name: run ls
