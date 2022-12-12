@@ -17,7 +17,9 @@ jobs:
         run: |
           pwd
           ls
-          sh ./files/entrypoint.sh
+          cd /home
+          ls
+          #sh ./files/entrypoint.sh
 
   job_2_name_tag:
     runs-on: ubuntu-20.04
@@ -31,4 +33,4 @@ jobs:
         run: |
           pwd
           ls
-          sh ./files/entrypoint_tag.sh
+          #sh ./files/entrypoint_tag.sh
