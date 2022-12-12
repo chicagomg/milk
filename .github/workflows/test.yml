@@ -8,10 +8,11 @@ jobs:
   job_1_name:
     runs-on: ubuntu-20.04
     container:
-      image: ghcr.io/chicagomg/bash:5
-      credentials:
-        username: chicagomg
-        password: ${{ secrets.token }}
+      #image: ghcr.io/chicagomg/bash:5
+      image: public.ecr.aws/docker/library/bash:5
+      #credentials:
+      #  username: chicagomg
+      #  password: ${{ secrets.token }}
     steps:
       - uses: actions/checkout@main
       - name: run ls
