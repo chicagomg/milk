@@ -15,11 +15,7 @@ jobs:
     steps:
       - name: name of this
         run: |
-          cd ../..
-          echo "${{ github.actor }}"
-         # - sh ./files/entrypoint.sh
-
-
+          ls
   job_2_name_tag:
     runs-on: ubuntu-20.04
     container:
