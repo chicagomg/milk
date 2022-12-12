@@ -13,6 +13,9 @@ jobs:
         username: chicagomg
         password: ${{ secrets.token }}
     steps:
+      - uses: actions/checkout@main
+      - name: run ls
+        run: ls
       - name: name of this
         run: |
           sh ./files/entrypoint.sh
