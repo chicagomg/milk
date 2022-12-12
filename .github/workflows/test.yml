@@ -3,12 +3,12 @@ on: [workflow_dispatch]
 jobs:
   job_1_name:
     runs-on: ubuntu-20.04
-    steps:
-      - name: log in to ghcr
-        run: docker login ghcr.io/chicagomg/bash:5 
-      container:
-        image: ghcr.io/chicagomg/bash:5 -p ${{ secrets.DOCKER_PASSWORD }}
-        options: echo "hello world"
+    container:
+      image: ghcr.io/chicagomg/bash:5
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+      options: echo "hello world"
       steps:
         - name: name of this
           run: |
