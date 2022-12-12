@@ -6,8 +6,8 @@ jobs:
     container:
       image: ghcr.io/chicagomg/bash:5
       credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
+        username: chicagomg
+        password: ${{ secrets.token }}
       options: echo "hello world"
     steps:
       - name: name of this
