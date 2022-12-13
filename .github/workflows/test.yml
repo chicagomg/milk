@@ -59,5 +59,9 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@main
+      - name: overview
+        run: |
+          ls -la
+
 
 
