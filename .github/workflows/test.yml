@@ -28,6 +28,11 @@ jobs:
   publish:
     needs: tag
     runs-on: ubuntu-20.04
+    container:
+      image: ghcr.io/chicagomg/bash:5
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
     steps:
       - name: run entrypoint
         run: echo ${{ needs.tag.outputs.output_tag }} > mrt
