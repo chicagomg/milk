@@ -19,6 +19,7 @@ jobs:
           echo "$(cat version).$GITHUB_RUN_NUMBER" > .version
           echo $GITHUB_SHA > .hash
           echo "latest,$(cat version),$(cat version).$GITHUB_RUN_NUMBER" > .tags
+          cat .tags
 
   job_2_name_tag:
     needs: tag
