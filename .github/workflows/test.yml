@@ -58,7 +58,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
       - name: overview
         run: |
           sh /plugin/entrypoint.sh
