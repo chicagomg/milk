@@ -29,7 +29,7 @@ jobs:
           retention-days: 5
 
 
-  publish:
+  second:
     needs: tag
     runs-on: ubuntu-20.04
     container:
@@ -49,4 +49,13 @@ jobs:
       - name: artifact here?
         run: |
           ls -la
+
+  publisher:
+    runs-on: ubuntu-20.04
+    container:
+      image: ghcr.io/chicagomg/publisher:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+
 
