@@ -53,19 +53,14 @@ jobs:
   publisher:
     runs-on: ubuntu-20.04
     container:
-      image: ghcr.io/chicagomg/publisher:latest
+      image: ghcr.io/chicagomg/publisher:1.0
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
-      - uses: actions/checkout@v3
-      - name: overview
-        run: |
-          sh /plugin/entrypoint.sh
-          pwd
-          ls -la
-          cd /
-          ls -la
-          cat /outt.po
-
-
+      - uses: actions/checkout@main
+      - name: give execution permition
+        run: chmod +x /plugin/entrypoint.sh
+      - name: Run build script
+        run: /plugin/entrypoint.sh
+        shell: bash
