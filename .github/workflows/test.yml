@@ -19,7 +19,14 @@ jobs:
           echo "$(cat version).$GITHUB_RUN_NUMBER" > .version
           echo $GITHUB_SHA > .hash
           echo "latest,$(cat version),$(cat version).$GITHUB_RUN_NUMBER" > .tags
-          pwd 
+          pwd
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: kotik85
+          path: |
+            .version
+          retention-days: 5
 
 
   publish:
@@ -31,7 +38,12 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: kotik85
       - uses: actions/checkout@v3
       - name: what is it
         run: |
           ls -la
+
