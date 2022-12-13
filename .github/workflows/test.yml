@@ -21,7 +21,7 @@ jobs:
           echo "latest,$(cat version),$(cat version).$GITHUB_RUN_NUMBER" > .tags
 
   job_2_name_tag:
-    needs: tsg
+    needs: tag
     runs-on: ubuntu-20.04
     container:
       image: ghcr.io/chicagomg/busybox:1.35.0-glibc
