@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@main
       - name: run entrypoint
         run: |
+          echo "$(cat version).$GITHUB_RUN_NUMBER" > .version
+          cat .version
           echo $GITHUB_WORKFLOW
           echo $GITHUB_RUN_ID
           echo $GITHUB_RUN_NUMBER
