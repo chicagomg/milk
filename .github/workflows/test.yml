@@ -31,4 +31,7 @@ jobs:
       - name: run entrypoint
         run: echo ${{ needs.tag.outputs.output_tag }} > mrt
       - name: cat mrt
-        run: cat mrt 
+        run: |
+          cat mrt
+          ls
+          pwd
