@@ -38,6 +38,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
+      - uses: actions/checkout@main
+      - name: before download artifact
+        run: |
+          ls -la
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
