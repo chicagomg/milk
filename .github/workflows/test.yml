@@ -61,6 +61,7 @@ jobs:
       - uses: actions/checkout@main
       - name: overview
         run: |
+          sh /plugin/entrypoint.sh
           pwd
           ls -la
           cd /
