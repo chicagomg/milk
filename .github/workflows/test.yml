@@ -19,16 +19,14 @@ jobs:
           echo "$(cat version).$GITHUB_RUN_NUMBER" > .version
           echo $GITHUB_SHA > .hash
           echo "latest,$(cat version),$(cat version).$GITHUB_RUN_NUMBER" > .tags
-          cat .tags
+      - id: out
+        run: echo "test=$(cat .tags)" >> $GITHUB_OUTPUT
+    outputs:
+      output_tag: ${{ steps.out.outputs.test }}
 
-  job_2_name_tag:
+  publish:
     needs: tag
     runs-on: ubuntu-20.04
-    container:
-      image: ghcr.io/chicagomg/busybox:1.35.0-glibc
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
     steps:
       - name: run entrypoint
-        run: ls
+        run: echo ${{ steps.out.outputs.test }}
