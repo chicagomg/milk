@@ -20,10 +20,7 @@ jobs:
           echo $GITHUB_SHA > .hash
           echo "latest,$(cat version),$(cat version).$GITHUB_RUN_NUMBER" > .tags
           pwd 
-      - id: out
-        run: echo "test=$(cat .tags)" >> $GITHUB_OUTPUT
-    outputs:
-      output_tag: ${{ steps.out.outputs.test }}
+
 
   publish:
     needs: tag
@@ -34,10 +31,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     steps:
-      - name: run entrypoint
-        run: echo ${{ needs.tag.outputs.output_tag }} > mrt
-      - name: cat mrt
+      - uses: actions/checkout@v3
+      - name: what is it
         run: |
-          cat mrt
           ls
-          pwd
