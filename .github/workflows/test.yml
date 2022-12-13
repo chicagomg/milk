@@ -61,6 +61,7 @@ jobs:
       - uses: actions/checkout@main
       - name: overview
         run: |
+          pwd
           ls -la
 
 
