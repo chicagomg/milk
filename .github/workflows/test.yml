@@ -42,8 +42,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: kotik85
-      - uses: actions/checkout@v3
-      - name: what is it
+      - name: artifact here?
         run: |
           ls -la
 
