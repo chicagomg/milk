@@ -61,6 +61,12 @@ jobs:
       - uses: actions/checkout@main
       - name: give execution permition
         run: chmod +x /plugin/entrypoint.sh
+      - name: Login to GHCR 
+        uses: docker/login-action@v1  
+        with: 
+          registry: ghcr.io 
+          username: ${{ github.actor }}
+          password: ${{ secrets.github_token }}
       - name: Run build script
         run: /plugin/entrypoint.sh
         shell: bash
